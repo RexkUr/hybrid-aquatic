@@ -16,12 +16,12 @@ public class EntityMixin {
     private float onGetStepHeight(float original) {
         // Allows player to walk in the water without jumping
         Entity entity = (Entity) (Object) this;
-        if (entity instanceof PlayerEntity player) {
-            ItemStack stack = player.getEquippedStack(EquipmentSlot.FEET);
-            if (stack.isOf(HybridAquaticItems.INSTANCE.getDIVING_BOOTS()) && player.isSubmergedIn(FluidTags.WATER)) {
-                return original * 1.67f;
-            }
-        }
+ //       if (entity instanceof PlayerEntity player) {
+  //          ItemStack stack = player.getEquippedStack(EquipmentSlot.FEET);
+  //          if (stack.isOf(HybridAquaticItems.INSTANCE.getDIVING_BOOTS()) && player.isSubmergedIn(FluidTags.WATER)) {
+  //              return original * 1.67f;
+  //          }
+   //     }
 
         return original;
     }

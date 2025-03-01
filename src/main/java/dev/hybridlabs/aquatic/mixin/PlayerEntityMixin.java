@@ -110,23 +110,23 @@ public abstract class PlayerEntityMixin implements CustomPlayerEntityData {
         var player = (PlayerEntity) (Object) this;
         ItemStack itemStack = player.getEquippedStack(EquipmentSlot.HEAD);
 
-        if (itemStack.isOf(HybridAquaticItems.INSTANCE.getDIVING_HELMET())) {
-            if (!player.isSubmergedIn(FluidTags.WATER)) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 600, 0, false, false, false));
-            } else {
-                player.addStatusEffect(new StatusEffectInstance(HybridAquaticStatusEffects.INSTANCE.getCLARITY(), 600, 0, false, false, false));
-            }
-        }
+  //      if (itemStack.isOf(HybridAquaticItems.INSTANCE.getDIVING_HELMET())) {
+  //          if (!player.isSubmergedIn(FluidTags.WATER)) {
+   //             player.addStatusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 600, 0, false, false, false));
+  //          } else {
+   //             player.addStatusEffect(new StatusEffectInstance(HybridAquaticStatusEffects.INSTANCE.getCLARITY(), 600, 0, false, false, false));
+   //         }
+   //     }
     }
 
     @Unique
     private void updateTurtleChestplate() {
         var player = (PlayerEntity) (Object) this;
         var itemStack = player.getEquippedStack(EquipmentSlot.CHEST);
-        if (itemStack.isOf(HybridAquaticItems.INSTANCE.getTURTLE_CHESTPLATE())) {
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 0, false, false, true));
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0, false, false, true));
-        }
+ //       if (itemStack.isOf(HybridAquaticItems.INSTANCE.getTURTLE_CHESTPLATE())) {
+ //           player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 0, false, false, true));
+  //          player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0, false, false, true));
+ //       }
     }
 
     @Unique
@@ -142,13 +142,13 @@ public abstract class PlayerEntityMixin implements CustomPlayerEntityData {
                 List<DefaultedList<ItemStack>> combinedInventory = ImmutableList.of(inventory.main, inventory.offHand);
                 List<ItemStack> coralItems = new ArrayList<>();
                 for (List<ItemStack> list : combinedInventory) {
-                    for (ItemStack itemStack : list) {
-                        if (itemStack.getItem() instanceof ToolItem tool &&
-                                tool.getMaterial() == HybridAquaticToolMaterials.CORAL &&
-                                itemStack.isDamaged()) {
-                            coralItems.add(itemStack);
-                        }
-                    }
+//                    for (ItemStack itemStack : list) {
+//                        if (itemStack.getItem() instanceof ToolItem tool &&
+ //                               tool.getMaterial() == HybridAquaticToolMaterials.CORAL &&
+ //                               itemStack.isDamaged()) {
+ //                           coralItems.add(itemStack);
+ //                       }
+ //                   }
                 }
 
                 if (!coralItems.isEmpty()) {
