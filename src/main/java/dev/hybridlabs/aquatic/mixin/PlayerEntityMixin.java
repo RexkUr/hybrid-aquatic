@@ -91,26 +91,26 @@ public abstract class PlayerEntityMixin implements CustomPlayerEntityData {
         }
     }
 
-    @Inject(method = "tick", at = @At("TAIL"))
-    private void tickDownCustomHurtTime(CallbackInfo ci) {
-        int cHurtTime = hybrid_aquatic$getHurtTime();
-        if (cHurtTime > 0) {
-            hybrid_aquatic$setHurtTime(cHurtTime - 1);
-        }
+ //   @Inject(method = "tick", at = @At("TAIL"))
+ //   private void tickDownCustomHurtTime(CallbackInfo ci) {
+  //      int cHurtTime = hybrid_aquatic$getHurtTime();
+  //      if (cHurtTime > 0) {
+   //         hybrid_aquatic$setHurtTime(cHurtTime - 1);
+   //     }
         // Gives Water Breathing/Clarity if player has Diving Helmet equipped
-        updateDivingHelmet();
+   //     updateDivingHelmet();
         // Allows player to walk in the water without jumping
-        updateDivingBoots();
+   //     updateDivingBoots();
         // Gives Resistance and Slowness if player has Turtle chestplate equipped
-        updateTurtleChestplate();
+   //     updateTurtleChestplate();
         // Repairs coral tools in the water
-        repairCoralTools();
-    }
+   //     repairCoralTools();
+ //   }
 
-    @Unique
-    private void updateDivingHelmet() {
-        var player = (PlayerEntity) (Object) this;
-        ItemStack itemStack = player.getEquippedStack(EquipmentSlot.HEAD);
+  //  @Unique
+ //   private void updateDivingHelmet() {
+  //      var player = (PlayerEntity) (Object) this;
+ //       ItemStack itemStack = player.getEquippedStack(EquipmentSlot.HEAD);
 
   //      if (itemStack.isOf(HybridAquaticItems.INSTANCE.getDIVING_HELMET())) {
   //          if (!player.isSubmergedIn(FluidTags.WATER)) {
@@ -119,14 +119,14 @@ public abstract class PlayerEntityMixin implements CustomPlayerEntityData {
    //             player.addStatusEffect(new StatusEffectInstance(HybridAquaticStatusEffects.INSTANCE.getCLARITY(), 600, 0, false, false, false));
    //         }
    //     }
-    }
-
-    @Unique
-    private void updateDivingBoots() {
-        var player = (PlayerEntity) (Object) this;
-        ItemStack itemStack = player.getEquippedStack(EquipmentSlot.FEET);
-        isWearingDivingBoots = itemStack.isOf(HybridAquaticItems.INSTANCE.getDIVING_BOOTS());
-    }
+ //   }
+//
+   // @Unique
+  //  private void updateDivingBoots() {
+  //      var player = (PlayerEntity) (Object) this;
+  //      ItemStack itemStack = player.getEquippedStack(EquipmentSlot.FEET);
+ //       isWearingDivingBoots = itemStack.isOf(HybridAquaticItems.INSTANCE.getDIVING_BOOTS());
+  //  }
 
 
     @Unique
